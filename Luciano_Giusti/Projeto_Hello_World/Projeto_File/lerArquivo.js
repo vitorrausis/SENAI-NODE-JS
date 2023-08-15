@@ -19,3 +19,8 @@ fs.unlink('ArquivoNovoRenomeado.txt', function(err){
     if(err) throw err;
     console.log('Arquivo deletado!');
 });
+
+fs.appendFile('novo2.txt', 'Olá NodeJS! UNISENAI 2023', function(err){
+    if(err) throw err;
+    console.log('Novo arquivo "novo2.txt"');
+});
