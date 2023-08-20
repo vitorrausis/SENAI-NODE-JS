@@ -1,0 +1,1 @@
+Esse é o texto que irá substituir no arquivo original
