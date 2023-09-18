@@ -1,6 +1,10 @@
 {
   "dependencies": {
+<<<<<<< HEAD
+    "cli-color": "^2.0.3"
+=======
     "cli-color": "^2.0.3",
     "express": "^4.18.2"
+>>>>>>> cb835fc30dee8f90885acc72562d04c9d5ce4cd4
   }
 }
