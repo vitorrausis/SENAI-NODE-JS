@@ -3,7 +3,7 @@ const express = require("express");
 //instacio o express e carregando a biblioteca do express dentro dessa const app
 const app = express();
 
- app.listen(8080, () =>{
+ app.listen(3080, () =>{
      console.log("Servidor rodando!");
 });
 
@@ -30,18 +30,23 @@ app.get("/",(req, res) => {
 
 app.use(express.json());
 
-app.post("/novogame", (req, res) => {
+app.put("/novogame/:index", (req, res) => {
+    const { index } = req.params;
     let title = req.body.title;
     let studio = req.body.studio;
     let price = req.body.price;
 
-    console.log(title);
-    console.log(studio);
-    console.log(price);
+    // console.log(title);
+    // console.log(studio);
+    // console.log(price);
 
-    let newGame = {title, studio, price};
-    //para enviar estes dados para o array agora utilizamos o método push do js
-    games.push(newGame);
+    games[index]= {title, studio, price};
+
+    return res.json(games);
+
+    // let newGame = {title, studio, price};
+    // //para enviar estes dados para o array agora utilizamos o método push do js
+    // games.push(newGame);
 
     res.send("OK");
 });
