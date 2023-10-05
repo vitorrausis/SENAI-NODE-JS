@@ -9,3 +9,6 @@ console.log("O valor da Soma é: " + SomaFunc(1, 2));
 
  let divFunc = require("./divisao");
  console.log("O valor da divisão é: " + divFunc(10,2));
+
+ const fs = require("fs");
+ 
