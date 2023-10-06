@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "cli-color": "^2.0.3",
     "express": "^4.18.2"
   }
 }
