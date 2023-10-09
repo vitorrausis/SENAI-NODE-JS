@@ -1,15 +1,10 @@
 const express = require("express");
-
 const app = express();
+app.use(express.json());
+
+//Lista de Games
 
 let games = [
-    {title: "Sea of Thieves", studio: "rare"},
-    {title: "WOW", studio: "Blizzard"},
-    {title: "Valorant", studio: "Riot"},
-    {title: "COD", studio: "Activision"}
-]
-
-let gamesFavoritos = [
     {title: "Fortnite", studio: "Epic Games", price: "Gratuito"},
     {title: "Grounded", studio: "Obsidian", price: 199},
     {title: "Crash Team Racing", studio: "Activiosion", price: 120},
@@ -17,36 +12,47 @@ let gamesFavoritos = [
     {title: "Starfield", studio: "Bethesda Game Studios", price: 350},
     {title: "The Texas Chain Saw Massacre", studio: "Sumo Nottingham", price: 148},
     {title: "Super mario 3", studio: "Nintendo", price: "necessita atualização"}
-]
+];
 
-app.listen(3080,() =>{
+app.listen(3080,() => {
     console.log("Servidor rodando!");
-})
+});
 
 app.get("/", (req, res) => {
-    res.json(newGame);
-})
+    res.json(games);
+});
 
-let newGame = null; // Inicializa a variável newGame como null no escopo global
-
-app.use(express.json());
-
-app.post("/newGame", (req, res) =>{
+app.post("/novogame", (req, res) => {
     let title = req.body.title;
+    let time = req.body.epoca;
     let studio = req.body.studio;
-    let price = req.body.price;
-
+    let price = req.body.price 
+    
     console.log(title);
+    console.log(time);
     console.log(studio);
     console.log(price);
 
-    newGame = {title, studio, price};
+    let newGame = {title, studio, studio, price};
     games.push(newGame);
     res.send("OK");
 });
 
-app.get("/", (req, res) => {
-    res.json(newGame);
+app.put("/novogame/:index", (req, res) => {
+    const { index } = req.params;
+    let title = req.body.title;
+    let studio = req.body.studio;
+    let price = req.body.price;
+
+    games[index]= {title, studio, price};
+
+    return res.json(games);
+
+    res.send("OK");
+});
+
+app.delete("/:index", (req, res) =>{
+    const {index} = req.params;
+    games.splice(index,1);
+    return res.json({ message: "O jogo foi deletado"});
 })
-
-
