@@ -14,3 +14,10 @@ let games = [
     {title:"Battlefield 4",  studio:"Dice", price:150},
     {title:"Battlefield 5",  studio:"Dice", price:350},
 ]
+app.listen(3000, () => {
+    console.log('Server is running on port 3000');
+})
+
+app.get('/', (req, res) => {
+    res.json(games);
+})
