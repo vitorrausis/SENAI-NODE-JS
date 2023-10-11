@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "cli-color": "^2.0.3",
+    "express": "^4.18.2",
+    "http": "^0.0.1-security"
+  },
+
+  "name": "http-server",
+  "version": "1.0.0",
+  "desctiption": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "name": "ot03",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+  
+}
