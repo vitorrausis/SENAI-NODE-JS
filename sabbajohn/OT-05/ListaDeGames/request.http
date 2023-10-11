@@ -1,0 +1,12 @@
+GET http://localhost:3000
+
+###
+
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Test",
+    "studio": "TestStudio",
+    "price":"0"
+}
