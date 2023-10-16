@@ -1,0 +1,90 @@
+1. O que é Node.js e por que é popular no desenvolvimento web?
+Node.js é um ambiente de tempo de execução de código JavaScript que permite aos desenvolvedores executar JavaScript no lado do servidor.É popular no desenvolvimento web por algumas razões:
+JavaScript no Servidor, Assincronicidade, NPM,Vasta Comunidade e Ecossistema, Desempenho,Flexibilidade.
+No geral, Node.js é popular no desenvolvimento web devido à sua capacidade de unificar a linguagem de programação (JavaScript) em toda a pilha de tecnologia, tornando o desenvolvimento mais eficiente e agradável para muitos desenvolvedores.
+
+
+2. Qual é a diferença entre o Node.js e outras tecnologias de servidor, como o
+Apache?
+A principal diferença entre o Node.js e tecnologias de servidor como o Apache está na arquitetura e no modelo de manipulação de solicitações.
+
+Node.js usa uma arquitetura orientada a eventos e não bloqueante, que permite lidar com várias solicitações concorrentes de forma eficiente. O Apache utiliza uma arquitetura baseada em threads ou processos separados para lidar com solicitações, o que pode ser menos eficiente em aplicações de alto tráfego.
+
+Além disso, o Node.js é baseado em JavaScript, enquanto o Apache usa linguagens como PHP ou Ruby para desenvolvimento de servidor. A escolha entre eles depende das necessidades específicas do projeto e das preferências de desenvolvimento.
+
+3. Como você inicia um projeto Node.js usando o npm?
+Para iniciar um projeto Node.js usando o npm, você pode executar o seguinte comando no terminal:
+npm init
+
+Isso inicia o assistente de criação do arquivo package.json, que permite configurar e gerenciar as dependências do seu projeto. Siga as instruções e forneça as informações necessárias para configurar seu projeto.
+
+4. O que é o Express.js e qual é o seu papel no desenvolvimento web com
+Node.js?
+
+Express.js é um framework para Node.js que simplifica o desenvolvimento de aplicativos web. Ele lida com rotas, gerenciamento de solicitações e respostas, e fornece funcionalidades úteis. O Express.js desempenha um papel fundamental no desenvolvimento web com Node.js, tornando mais rápido e fácil a criação de servidores web e APIs.
+
+5. Explique o conceito de middleware no contexto do Express.js.
+
+Middleware no contexto do Express.js é uma função que processa solicitações HTTP antes que elas atinjam os manipuladores de rotas finais. Ele pode executar tarefas como autenticação, registro de solicitações e manipulação de erros. O middleware é usado para estender e personalizar o comportamento do aplicativo Express de forma modular e reutilizável.
+
+6. Como você roteia solicitações HTTP em um aplicativo Express?
+Para rotear solicitações HTTP em um aplicativo Express, você define rotas utilizando app.get(), app.post(), app.put(), etc., para especificar as ações a serem executadas com base na URL e no método HTTP. Cada rota é associada a uma função de manipulador que responde à solicitação e envia a resposta.
+
+7. O que é o middleware de análise de corpo (body-parser) e por que é útil em
+um aplicativo Express?
+O middleware de análise de corpo (body-parser) é usado em aplicativos Express para processar o corpo das solicitações HTTP, permitindo o acesso aos dados enviados pelo cliente, como formulários ou JSON. É útil porque simplifica a extração de dados da solicitação, tornando mais fácil o processamento desses dados no servidor.
+
+
+8. Quais são os principais métodos HTTP e como eles são usados em rotas
+Express?
+GET: Usado para recuperar recursos, como páginas da web ou dados, em rotas que respondem a solicitações de leitura:
+app.get('/rota', (req, res) => {
+    // Lógica para responder a uma solicitação GET
+});
+
+POST: Usado para enviar dados para o servidor, frequentemente usado para criar recursos em rotas de criação.
+app.post('/rota', (req, res) => {
+    // Lógica para lidar com uma solicitação POST
+});
+
+PUT: Usado para atualizar recursos existentes em rotas de atualização.
+app.put('/rota', (req, res) => {
+    // Lógica para lidar com uma solicitação PUT
+});
+
+DELETE: Usado para excluir recursos em rotas de exclusão.
+app.delete('/rota', (req, res) => {
+    // Lógica para lidar com uma solicitação DELETE
+});
+
+HEAD: Semelhante ao GET, mas usado para obter informações sobre a resposta sem o corpo da resposta.
+app.head('/rota', (req, res) => {
+    // Lógica para lidar com uma solicitação HEAD
+});
+
+PATCH: Usado para atualizar parcialmente um recurso em rotas de atualização parcial.
+app.patch('/rota', (req, res) => {
+    // Lógica para lidar com uma solicitação PATCH
+});
+
+
+
+9. Como você lida com erros em um aplicativo Express?
+Para lidar com erros em um aplicativo Express, você pode usar middleware de tratamento de erros, blocos try-catch, bibliotecas de validação, e tratamento de erros personalizados. Use middleware para capturar e responder a erros globalmente, try-catch para capturar erros locais, bibliotecas para validar entrada e tratamento personalizado para lidar com erros específicos.
+
+app.get('/rota', (req, res) => {
+    try {
+        // Lógica que pode gerar erros
+        throw new Error('Algo deu errado');
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Algo deu errado!');
+    }
+});
+
+
+
+10.O que é uma API RESTful e como o Express pode ser usado para criar uma?
+Uma API RESTful é uma interface de programação de aplicativos que segue os princípios da arquitetura REST (Representational State Transfer). Ela permite a comunicação entre sistemas por meio de solicitações HTTP para acessar e manipular recursos de forma padronizada.
+
+O Express pode ser usado para criar uma API RESTful no Node.js, definindo rotas que correspondem a recursos e métodos HTTP. Usando o Express, você pode criar endpoints que respondem a solicitações HTTP GET, POST, PUT, DELETE e outros, permitindo que os clientes acessem e modifiquem dados de forma estruturada e escalável. O Express simplifica a criação de rotas, middleware e tratamento de solicitações e respostas, tornando-o uma escolha popular para o desenvolvimento de APIs RESTful no Node.js.
