@@ -1,8 +1,20 @@
 const express = require('express');
 const app = express();
+app.use(express.json());
 
 app.listen(3000, () =>{
     console.log('Servidor rodando');
+})
+
+app.post('/novogame', (req,res) => {
+    let title = req.body.title;
+    let studio = req.body.studio;
+    let price = req.body.price;
+
+    let newgame = {title,studio,price};
+    games.push(newgame);
+    
+    res.send('OK'); //precisamos mandar uma resposta sempre para não dar timeout 
 })
 
 app.get('/', (req,res) =>{
