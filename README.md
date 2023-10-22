@@ -13,3 +13,8 @@
 
 - Cada aluno deve criar uma pasta com seu nome na raiz do projeto. 
 - Cada aluno deve separar os EADs por OT ou Atividades.
+
+### Frameworks
+
+- Express: O Express é um framework que possui um sistema de rotas, possibilita o tratamento de exceções e gerencia diferentes requisições HTTP com seus mais diversos verbos
+- Nodemon: O nodemon é um utilitário que monitora as mudanças nos arquivos do seu projeto e reinicia automaticamente o servidor Node.js
