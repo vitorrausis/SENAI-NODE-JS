@@ -1,0 +1,34 @@
+O que é Node.js e por que é popular no desenvolvimento web?
+O Node.js é um ambiente de execução de JavaScript no lado do servidor que se destaca no desenvolvimento web devido à sua capacidade de usar JavaScript tanto no cliente quanto no servidor. Sua popularidade é impulsionada por sua eficiência e desempenho, bem como pelo vasto ecossistema de pacotes disponíveis no npm.
+
+Qual é a diferença entre o Node.js e outras tecnologias de servidor, como o Apache?
+A diferença fundamental entre o Node.js e tecnologias de servidor tradicionais, como o Apache, reside em como eles lidam com as solicitações. O Apache usa um modelo que cria threads ou processos separados para cada conexão, enquanto o Node.js utiliza um modelo de E/S não bloqueante, permitindo o processamento de várias solicitações de forma assíncrona, tornando-o mais eficiente em ambientes de alto tráfego.
+
+Como você inicia um projeto Node.js usando o npm?
+Para começar um projeto Node.js com o npm, siga os seguintes passos:
+
+Crie uma pasta para o projeto.
+Execute o comando npm init na pasta para criar um arquivo package.json que registra as informações do projeto e suas dependências.
+Preencha as informações solicitadas no assistente npm init.
+Use npm install para adicionar pacotes e dependências ao projeto, por exemplo, npm install express para instalar o Express.js.
+
+O que é o Express.js e qual é o seu papel no desenvolvimento web com Node.js?
+O Express.js é um framework para Node.js que simplifica o desenvolvimento web, fornecendo ferramentas para criar aplicativos e APIs de forma mais rápida e eficiente.
+
+Explique o conceito de middleware no contexto do Express.js.
+No contexto do Express.js, middleware são funções que executam tarefas intermediárias entre a solicitação do cliente e a resposta do servidor, como autenticação, manipulação de cabeçalhos e validação de dados.
+
+Como você roteia solicitações HTTP em um aplicativo Express?
+Para rotear solicitações HTTP em um aplicativo Express, você define rotas que correspondem a caminhos específicos e associa essas rotas a funções de manipulação.
+
+O que é o middleware de análise de corpo (body-parser) e por que é útil em um aplicativo Express?
+O middleware de análise de corpo (body-parser) é usado para analisar os corpos das solicitações HTTP, permitindo que você acesse os dados enviados pelos clientes, como formulários ou JSON. Ele é útil porque simplifica a manipulação desses dados.
+
+Quais são os principais métodos HTTP e como eles são usados em rotas Express?
+Os principais métodos HTTP, como GET, POST, PUT e DELETE, são usados para realizar diferentes ações em recursos web. No Express, você cria rotas correspondentes a esses métodos para lidar com as solicitações correspondentes.
+
+Como você lida com erros em um aplicativo Express?
+Para lidar com erros em um aplicativo Express, você pode usar middlewares de tratamento de erros ou adicionar um manipulador de erros no final do código. Esses middlewares capturam e lidam com erros durante o processamento da solicitação.
+
+O que é uma API RESTful e como o Express pode ser usado para criar uma?
+Uma API RESTful é um estilo de arquitetura de software que utiliza os princípios do HTTP para criar APIs que são simples, escaláveis e fáceis de entender. O Express é uma ferramenta útil para criar APIs RESTful, pois permite definir endpoints para recursos e usar os métodos HTTP para realizar operações nesses recursos.
