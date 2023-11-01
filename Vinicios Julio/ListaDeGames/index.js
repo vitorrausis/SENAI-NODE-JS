@@ -21,7 +21,7 @@ let games = [
 
 ];
 
-app.listen(3080,() =>{
+app.listen(8080,() =>{
 console.log("Servidor rodando");
 });
 app.get("/", (req, res) => {
@@ -54,3 +54,9 @@ games[index] = { title, studio, price };
 
 return res.json(games);
 });
+
+app.delete("/:index", (req, res) =>{
+    const { index } = req.params;
+    games.splice(index,1);
+    return res.json({ message: "O jogo foi deletado"});
+})
