@@ -36,9 +36,6 @@ app.get('/ufs/:iduf', (req, res) => {
     res.status(404).send({ "erro": mensagemErro });
 });
 
-
-
-
 app.listen(8090, () => {
     console.log('Servidor iniciado na porta 8090');
 });
