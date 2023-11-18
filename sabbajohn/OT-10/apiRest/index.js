@@ -17,7 +17,15 @@ app.get("/ufs/test",(req,res)=>{
 })
 
 app.get("/ufs/:id",(req,res)=>{
-    const id = req.params.id;
-    let uf = colecaoUf.find(uf => uf.id == id);
-    res.send(uf);
+    const id = parseInt(req.params.id);
+    if(!(isNaN(id))){
+        let uf = colecaoUf.find(uf => uf.id == id);
+        if(uf){
+            res.send(uf);
+        }else{
+            res.status(404).send("UF não encontrada");
+        }
+    }else{
+        res.status(400).send("ID inválido");
+    }
 })
