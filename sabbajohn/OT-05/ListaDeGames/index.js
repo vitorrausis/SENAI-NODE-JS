@@ -37,7 +37,7 @@ app.post('/newgame', (req, res) => {
     res.send(games);
     res.send("OK");
 
-})
+});
 app.put('/newgame/:index', (req, res) => {
     const{index} = req.params;
     let title = req.body.title;
@@ -48,5 +48,10 @@ app.put('/newgame/:index', (req, res) => {
     // game.price = price;
     games[index] = {title,studio,price}
     res.send(games);
-})
+});
 
+app.delete('/newgame/:index', (req, res) => {
+    const{index} = req.params;
+    games.splice(index,1);
+    res.send({message:"Game was deleted!"});
+});

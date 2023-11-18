@@ -69,3 +69,36 @@ content-type: application/json
 }
 
 ###
+
+# ATIVIDADE DELETE 3 ADD 3
+###
+DELETE http://localhost:3000/newgame/1 HTTP/1.1
+###
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+{
+    "title": "Delete&Add1",
+    "studio": "TestStudio1",
+    "price":"0"
+}
+###
+DELETE http://localhost:3000/newgame/2 HTTP/1.1
+###
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+{
+    "title": "Delete&Add2",
+    "studio": "TestStudio2",
+    "price":"0"
+}
+###
+DELETE http://localhost:3000/newgame/3 HTTP/1.1
+###
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+{
+    "title": "Delete&Add3",
+    "studio": "TestStudio3",
+    "price":"0"
+}
+###
