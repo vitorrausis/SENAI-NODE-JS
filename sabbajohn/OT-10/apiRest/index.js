@@ -6,10 +6,18 @@ const app = Express();
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
+const buscarUfsPorNome = (nomeuf) => {
+    return colecaoUf.filter((uf) => uf.nome.toLocaleLowerCase().includes(nomeuf.toLocaleLowerCase()));
+}
 
 app.get("/ufs", (req, res) => {
-    res.json(colecaoUf);
-    // res.send(colecaoUf); Por padrão o retorno é tipo json
+    const nomeUf =  req.query.busca;
+    const resultado = nomeUf ? buscarUfsPorNome(nomeUf) : colecaoUf;
+    if(resultado.length>0) {
+        res.send(resultado)
+    }else{
+        res.status(404).send("Não encontrado");
+    }
 });
 
 app.get("/ufs/test",(req,res)=>{

@@ -1,0 +1,104 @@
+GET http://localhost:3000
+
+###
+
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Test",
+    "studio": "TestStudio",
+    "price":"0"
+}
+
+###
+
+### SEGUE AQUI AS 5 ALTERAÇÕES DOS GAMES COMO PEDIDO
+#1
+PUT http://localhost:3000/newgame/1 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Test1",
+    "studio": "TestStudio1",
+    "price":"1"
+}
+
+###
+# 2
+PUT http://localhost:3000/newgame/2 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Test2",
+    "studio": "TestStudio2",
+    "price":"2"
+}
+
+###
+# 3
+PUT http://localhost:3000/newgame/3 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Test3",
+    "studio": "TestStudio3",
+    "price":"3"
+}
+
+###
+# 4
+PUT http://localhost:3000/newgame/4 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Test4",
+    "studio": "TestStudio4",
+    "price":"4"
+}
+
+###
+# 5
+PUT http://localhost:3000/newgame/5 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Test5",
+    "studio": "TestStudio5",
+    "price":"5"
+}
+
+###
+
+# ATIVIDADE DELETE 3 ADD 3
+###
+DELETE http://localhost:3000/newgame/1 HTTP/1.1
+###
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+{
+    "title": "Delete&Add1",
+    "studio": "TestStudio1",
+    "price":"0"
+}
+###
+DELETE http://localhost:3000/newgame/2 HTTP/1.1
+###
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+{
+    "title": "Delete&Add2",
+    "studio": "TestStudio2",
+    "price":"0"
+}
+###
+DELETE http://localhost:3000/newgame/3 HTTP/1.1
+###
+POST http://localhost:3000/newgame HTTP/1.1
+content-type: application/json
+{
+    "title": "Delete&Add3",
+    "studio": "TestStudio3",
+    "price":"0"
+}
+###
