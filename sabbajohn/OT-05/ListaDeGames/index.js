@@ -38,4 +38,15 @@ app.post('/newgame', (req, res) => {
     res.send("OK");
 
 })
+app.put('/newgame/:index', (req, res) => {
+    const{index} = req.params;
+    let title = req.body.title;
+    let studio = req.body.studio;
+    let price = req.body.price;
+    // let game = games.find(g => g.title == title);
+    // game.studio = studio;
+    // game.price = price;
+    games[index] = {title,studio,price}
+    res.send(games);
+})
 
