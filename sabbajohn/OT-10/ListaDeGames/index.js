@@ -18,9 +18,17 @@ let games = [
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 })
-
+const buscaGamePorNome = (nameGame) => {
+    return games.filter((game) => game.title.toLocaleLowerCase().includes(nameGame.toLocaleLowerCase()));
+}
 app.get('/', (req, res) => {
-    res.json(games);
+    const nameGame = req.query.busca;
+    result = nameGame ? buscaGamePorNome(nameGame) : games;
+    if(result.length>0){
+        res.send(result);
+    }else{
+        res.status(404).send("Game not found");
+    }
 })
 
 app.post('/newgame', (req, res) => {

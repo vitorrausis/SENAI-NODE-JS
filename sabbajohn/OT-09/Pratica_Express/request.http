@@ -1,0 +1,53 @@
+GET http://localhost:3000/cars
+
+###
+GET http://localhost:3000/cars/2
+
+###
+POST http://localhost:3000/cars
+Content-Type: application/x-www-form-urlencoded
+
+name=Celta
+###
+DELETE http://localhost:3000/cars/2
+###
+# Atividade
+POST http://localhost:3000/cars
+Content-Type: application/x-www-form-urlencoded
+
+name=Opala
+&model=Coupê 1988
+&price=R$38.000
+###
+POST http://localhost:3000/cars
+Content-Type: application/x-www-form-urlencoded
+
+name=Maverick
+&model=5.0 V8 16v 1974
+&price=R$328.000
+###
+POST http://localhost:3000/cars
+Content-Type: application/x-www-form-urlencoded
+
+name=Mustang
+&model=Boss 429 1969
+&price=R$499.000
+###
+PUT http://localhost:3000/cars/0
+Content-Type: application/x-www-form-urlencoded
+
+name=Gol
+&model=Quadrado 1996
+&price=R$7.500
+###
+POST http://localhost:3000/cars/1
+Content-Type: application/x-www-form-urlencoded
+
+name=Saveiro
+&model=Cross 2012
+&price=R$69.000
+###
+DELETE http://localhost:3000/cars/2
+###
+DELETE http://localhost:3000/cars/3
+###
