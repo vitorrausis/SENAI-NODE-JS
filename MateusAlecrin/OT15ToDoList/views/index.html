@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List Node</title>
+    <link href="../public/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+
+    <div class="tarefas">
+        <h3>To Do List Node</h3>
+        <form class="d-flex" method="post" onsubmit="return validarFormulario()">
+            <input type="text" class="form-control" name="tarefa">
+            <input type="submit" name="acao" class="btn btn-primary" value="Inserir">
+        </form>
+        <% for(let i = 0; i < tasksList.length; i++) { %> 
+            
+            <p><%= tasksList[i] %> | <a href="/deletar/<%= i %>"><i class="bi bi-trash"></i></a></p>
+        
+        <% } %>
+    </div>
+    <!-- Adicione o Bootstrap JS (Opcional, se precisar dos recursos JavaScript)-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+        function validarFormulario() {
+            https://ava.sesisenai.org.br/pluginfile.php/803645/mod_resource/content/17/OT%20-%20NodeJS%20-%2015%20-%20Projeto%20TodoList%20-%20Consumindo%20API%20no%20FrontEnd.pdf
+            pagina 11
+        }
+    </script>
+    
+    
+</body>
+</html>
