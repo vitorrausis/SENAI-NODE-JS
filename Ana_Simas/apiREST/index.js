@@ -3,9 +3,9 @@ import colecaoUf from './dados.js';
 
 const app = express();
 
-app.get('/ufs', (req,res) => {
-    res.json(colecaoUf);
-});
+// app.get('/ufs', (req,res) => {
+//     res.json(colecaoUf);
+// });
 
 app.get('/ufs/:iduf', (req,res) => {
     const iduf = parseInt(req.params.iduf);
@@ -26,6 +26,20 @@ app.get('/ufs/:iduf', (req,res) => {
         res.json(uf);
     } else {
         res.status(404).send({"erro": mensagemErro});
+    }
+});
+
+const buscarUfsPorNome = (nomeUf) => {
+    return colecaoUf.filter(uf => uf.nome.toLowerCase().includes(nomeUf.toLowerCase()));
+};
+
+app.get('/ufs', (req,res)=>{
+    const nomeUf = req.query.busca;
+    const resultado = nomeUf ? buscarUfsPorNome(nomeUf) : colecaoUf;
+    if(resultado.length > 0){
+        res.json(resultado);
+    }else{
+        res.status(404).send({"erro": "Nenhuma UF encontrada"});
     }
 });
 
