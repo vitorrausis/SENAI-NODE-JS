@@ -20,13 +20,19 @@ app.get('/', (req, res)=>{
 });
 
 app.get('/deletar/:id',(req,res)=>{
-  tasks = tasks.filter(function(val,index){
-  if(index != req.params.id){
-    return val;
+  const id = parseInt(req.params.id);
+  if (id >= 0 && id < tasks.length){
+    tasks.splice(id,1);
+    // remove o item do array na posição do ID
   }
-  })
-  res.render('index',{tasksList:tasks});
-})
+  res.redirect('/');
+  //tasks = tasks.filter(function(val,index){
+  //if(index != req.params.id){
+    //return val;
+  //}
+  //})
+  //res.render('index',{tasksList:tasks});
+});
 app.post('/', (req,res)=>{
   tasks.push(req.body.task);
   res.render('index',{tasksList: tasks});

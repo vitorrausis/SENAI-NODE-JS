@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="/public/style.css" >
     <!-- Adicionando o Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/botstrap/4.5.2/css/bootstrap.min.css">
-
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+    " rel="stylesheet">
 </head>
 
 <body>
@@ -24,12 +26,19 @@
             <% }%>
     </div>
 </body>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
 <script>
     function validarFormulario(){
         var tarefa = document.getElementsByName("task")[0].value;
         if(tarefa.trim() === ''){
-            alert("Por favor, preenche essa merda antes de enviar, seu fudido.");
-            return false; // Evita o envio do formulario se o campo estiver vazio
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text:'Por favor, preencha a tarefa antes de enviar, seu porra.',
+            });
+            return false; // Evita o envio do formulário se o campo estiver vazio
         }
         return true; // Permite o envio do formulario se o campo estiver preenchido
     }
