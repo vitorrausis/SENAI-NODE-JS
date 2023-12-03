@@ -67,6 +67,3 @@ app.delete("/:index", (req, res) => {
     games.splice(index, 1);
     return res.json({ message: "O Jogo foi deletado"});
 });
-
-
-
