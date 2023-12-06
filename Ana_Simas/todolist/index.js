@@ -1,16 +1,35 @@
 const express = require('express');
+var bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 
 app.engine('html', require('ejs').renderFile);
-app.set('view engine','html');
-app.use('/public',express.static(path.join(__dirname, 'public')));
-app.set('views',path.join(__dirname,'/views'));
+app.set('view engine', 'html');
+app.use('/public', express.static(path.join(__dirname, 'public')));
+app.set('views', path.join(__dirname, '/views'));
 
-let tasks = ['Passear com o cat', 'Ir ao mercado', 'Terminar as OTs de Node']
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+let tasks = ['Passear com o cat', 'Ir ao mercado', 'Terminar as OTs de Node'];
 
 app.get('/',(req,res) =>{
     res.render('index',{tasksList: tasks});
+});
+
+app.post('/',(req,res)=>{
+    tasks.push(req.body.task);
+    res.render('index',{tasksList: tasks});
+})
+
+app.get('/deletar/:id',(req,res) =>{
+    const id = parseInt(req.params.id);
+    if(id >= 0 && id < tasks.length){
+        tasks.splice(id,1);
+    }
+    res.redirect('/');
 });
 
 app.listen(5000, () =>{
