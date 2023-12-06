@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Lista de tarefas NodeJS</title>
+    <link rel="stylesheet" href="/public/style.css" >
+    <!-- Adicionando o Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/botstrap/4.5.2/css/bootstrap.min.css">
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.min.css
+    " rel="stylesheet">
+</head>
+
+<body>
+    <div class="tarefas">
+        <h3>TODOLIST NODE</h3>
+        <form class="d-flex" method="post" onsubmit="return validarFormulario()">
+        <input type="text" class="form-control" name="task" />
+        <input type="submit" name="acao" class="btn btn-primary" value="Inserir" />
+        </form>
+        <% for(let i=0; i < tasksList.length; i++){ %>
+            <p>
+                <%= tasksList[i] %> | <a href="/deletar/<%= i%>"><i class="bi bi-trash"></i></a></p>
+            </p>
+            <% }%>
+    </div>
+</body>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.10.0/dist/sweetalert2.all.min.js
+"></script>
+<script>
+    function validarFormulario(){
+        var tarefa = document.getElementsByName("task")[0].value;
+        if(tarefa.trim() === ''){
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text:'Por favor, preencha a tarefa antes de enviar, seu porra.',
+            });
+            return false; // Evita o envio do formulário se o campo estiver vazio
+        }
+        return true; // Permite o envio do formulario se o campo estiver preenchido
+    }
+</script>
+</html>

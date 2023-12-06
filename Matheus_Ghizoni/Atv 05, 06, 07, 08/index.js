@@ -6,9 +6,7 @@ app.use(express.json());
 
 app.listen(3080,() => {
     console.log("Servidor rodando!");
-})
-
-
+});
 
 app.post("/novogame", (req, res) =>{
     let title = req.body.title;
@@ -28,6 +26,28 @@ app.post("/novogame", (req, res) =>{
 app.get("/", (req, res) => {
     res.send(games);
 })
+
+app.get("/busca/:title", (req, res) => {
+    const { title } = req.params;
+    console.log(title);
+    let mensagemErro = '';
+    let game;
+
+    if (title != null) {
+        console.log("Cheguei no if")
+        game = games.find(u => u.title === title);
+        if(!game){
+            mensagemErro = 'Jogo não encontrado';
+        }
+    } else {
+        mensagemErro = 'Requisição inválida';
+    }
+
+    if (game) {
+        res.json(game);
+    }
+    res.status(404).send({ "erro": mensagemErro });
+});
 
 app.put('/novogame/:index', (req, res) =>{
     const { index } = req.params;
